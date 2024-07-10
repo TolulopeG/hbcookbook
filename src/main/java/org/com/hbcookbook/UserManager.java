@@ -31,4 +31,14 @@ public class UserManager {
 
 	}
 
+	public boolean authenticate(String username, String password) {
+		User user = users.get(username);
+		return user != null && user.getPassword().equals(password);
+	}
+
+	public User getUser(String username) {
+		return users.get(username);
+
+	}
+
 }
