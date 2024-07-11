@@ -21,7 +21,6 @@ public class UserManager {
 				String[] parts = line.split(",");
 				if (parts.length == 2) {
 					users.put(parts[0], new User(parts[0], parts[1]));
-					read.close();
 				}
 			}
 		} catch (IOException e) {
