@@ -7,7 +7,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UserManager {
-	private static final String USERS_FILE = "data/users.txt";
+	private static final String USERS_FILE = System.getProperty("users.file.path", "data/users.txt");
+	//private static final String USERS_FILE = "data/users.txt";
 	Map<String, User> users = new HashMap<>();
 
 	public UserManager() {

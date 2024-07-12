@@ -45,11 +45,11 @@ public class RecipeManager {
 		if (directory.exists()) {
 			for (File file : Objects.requireNonNull(directory.listFiles())) {
 				try (BufferedReader br = new BufferedReader(new FileReader(file))) {
-					String title = file.getName().replace(".txt", "");
+					String recipeName = file.getName().replace(".txt", "");
 					String ingredients = br.readLine();
 					String instructions = br.readLine();
 					String appliances = br.readLine();
-					recipes.add(new Recipe(title, ingredients, instructions, appliances));
+					recipes.add(new Recipe(recipeName, ingredients, instructions, appliances));
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
